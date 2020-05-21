@@ -1,0 +1,75 @@
+<div class="header">
+  <h1>Dynamic Forms Example</h1>
+</div>
+
+
+  <mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>
+          <button mat-icon-button   aria-label="Add new plan participant" (click)="addNewUser()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card-title>
+ 
+    </mat-card-header>
+  
+  <ng-container *ngIf="formsArray.length > 0;  else noResults">
+    <ng-container *ngFor="let form of formsArray; index as i;">
+   
+        <form [formGroup]="formsArray[i]">
+          <mat-accordion>
+            <mat-expansion-panel [(expanded)]= "panelOpenState">
+              <mat-expansion-panel-header [collapsedHeight] = "calcCollapsedHeight">
+                <mat-panel-title>
+                <ngx-avatar [bgColor] = "this.response[i].avatarColor" [size]="avatarSize" [name]="this.response[i].fullName" ></ngx-avatar>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-form-field>
+                <input
+                  matInput
+                  formControlName="first"
+                  style="border-bottom: solid 1px;"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  formControlName="last"
+                  style="border-bottom: solid 1px;"
+                />
+              </mat-form-field>
+              <div style="margin-top: 20px" >
+                <mat-button-toggle-group class="button-right">
+                <mat-button-toggle
+                  mat-stroked-button   
+                  aria-label="delete plan participant" 
+                  (click)="save(i)">
+                 Save          
+                </mat-button-toggle>
+                <mat-button-toggle
+                  mat-stroked-button   
+                  aria-label="delete plan participant" 
+                  (click)="delete(i)">
+                  Delete              
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+              </div>
+              <mat-action-row>
+                <button mat-button>Click me</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+ 
+    </ng-container>
+  </ng-container>
+  <ng-template #noResults>
+    <div style="margin-top: 25px">
+      <h4>Sorry! No users found.</h4>
+    </div>
+  </ng-template>
+
+</mat-card>
+
+
+

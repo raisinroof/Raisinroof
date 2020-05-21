@@ -1,0 +1,41 @@
+
+.card {
+    /* display: flex; */
+    /* border: solid 1px; */
+    /* padding: 20px;
+    /* border-radius: 10px; */
+    max-width: 60rem;
+    margin: 15px auto;
+   
+  }
+
+  .mat-card-header {
+    justify-content: flex-end; /* for right*/
+    /* margin: 15px;*/
+
+  }
+
+  .button-right {
+      justify-content: flex-end;
+  }
+  
+  .cards {
+    margin: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .newUserForm {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  
+   
+
+   
+ 
+
+ 
+ 

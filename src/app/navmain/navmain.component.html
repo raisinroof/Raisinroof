@@ -1,0 +1,21 @@
+<div >
+    <nav  mat-tab-nav-bar mat-align-tabs="center" >
+        <a  mat-tab-link 
+            routerLink="/people"
+            routerLinkActive="active" 
+            #peopleTab="routerLinkActive" 
+            [active]="peopleTab.isActive"
+             ><h1>People</h1>
+             </a>
+        <a  mat-tab-link
+            routerLink="/events"
+            test = "Events" 
+            routerLinkActive="active" 
+            #eventsTab="routerLinkActive" 
+            [active]="eventsTab.isActive"
+            ><h1>Events</h1></a> 
+        <a mat-tab-link routerLink="/outcomes" routerLinkActive="active" #outcomesTab="routerLinkActive"
+        [active]="outcomesTab.isActive"><h1>Outcomes</h1>  </a>          
+    </nav>
+ 
+</div>
